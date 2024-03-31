@@ -86,5 +86,21 @@ public class MemoryGame {
         pairsFound = 0;
     }
 
+    public void resetGame() {
+        turns = 0;
+        previousFlippedCard = null;
+        iconsFlipped = 0;
+        pairsFound = 0;
+
+        List<CustomIcon> iconsList = new ArrayList<>(Arrays.asList(icons));
+        Collections.shuffle(iconsList);
+        iconsList.toArray(icons);
+
+        for (int i = 0; i < 12; i++) {
+            icons[i].setIsDone(false);
+            icons[i].setIsFlipped(false);
+        }
+    }
+
 
 }
