@@ -4,7 +4,6 @@ import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.Image;
 import java.awt.GridLayout;
-import java.awt.Component;
 
 import javax.swing.JLabel;
 import javax.swing.JFrame;
@@ -13,14 +12,7 @@ import javax.swing.BoxLayout;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.Timer;
-import javax.swing.JOptionPane;
 import javax.swing.Box;
-
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 
 public class Main {
 
@@ -34,13 +26,13 @@ public class Main {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         JPanel mainPanel = new JPanel();
-        mainPanel.setPreferredSize (new Dimension (600, 600));
+        mainPanel.setPreferredSize (new Dimension (500, 600));
         mainPanel.setLayout (new BoxLayout(mainPanel, BoxLayout.Y_AXIS));
         mainPanel.setBackground(Color.BLACK);
 
         JPanel titlePanel = new JPanel();
         titlePanel.setLayout (new FlowLayout(FlowLayout.CENTER));
-        titlePanel.setBorder(BorderFactory.createEmptyBorder(15, 0, 0, 0));
+        titlePanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
         titlePanel.setPreferredSize(new Dimension(titlePanel.getPreferredSize().width, -65));
         titlePanel.setBackground(Color.BLACK);
 
@@ -63,8 +55,8 @@ public class Main {
 
         JButton newGameButton = new JButton("New Game");
         newGameButton.setPreferredSize(new Dimension(100, 50));
-        newGameButton.setBorder(BorderFactory.createLineBorder(Color.WHITE, 1));
-        newGameButton.setForeground(Color.WHITE);
+        newGameButton.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
+        newGameButton.setForeground(Color.BLACK);
 
         newButtonPanel.add(newGameButton);
         mainPanel.add(newButtonPanel);
@@ -91,12 +83,12 @@ public class Main {
             JLabel label = new JLabel(game.getCustomIcon(i).getDefaultIconImage());
             label.putClientProperty("customIcon", game.getCustomIcon(i));
             gridPanel.add(label);
+            actions.addMouseListener(label, game, turnsLabel);
         }
 
+        actions.addActionListener(newGameButton, gridPanel, game, turnsLabel);
+
         mainPanel.add(gridPanel);
-
-
-
         mainPanel.add(Box.createRigidArea(new Dimension(0, 10)));
 
         frame.add(mainPanel);

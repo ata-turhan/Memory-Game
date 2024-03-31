@@ -11,7 +11,7 @@ public class CustomIcon {
     private ImageIcon flippedIconImage; // Variable to store image of the flipped icon.
 
     public CustomIcon(String flippedIconPath) {
-        this.defaultIconPath = "/images/back_of_card.jpg";
+        this.defaultIconPath = "images/back_of_card.jpg";
         this.flippedIconPath = flippedIconPath;
         this.isDone = false;
         this.isFlipped = false;
