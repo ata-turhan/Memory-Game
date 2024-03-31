@@ -56,6 +56,19 @@ public class Main {
         titlePanel.add(titleIconLabel);
         mainPanel.add(titlePanel);
 
+        JPanel newButtonPanel = new JPanel();
+        newButtonPanel.setLayout (new FlowLayout(FlowLayout.CENTER));
+        newButtonPanel.setPreferredSize(new Dimension(newButtonPanel.getPreferredSize().width, -90));
+        newButtonPanel.setBackground(Color.BLACK);
+
+        JButton newGameButton = new JButton("New Game");
+        newGameButton.setPreferredSize(new Dimension(100, 50));
+        newGameButton.setBorder(BorderFactory.createLineBorder(Color.WHITE, 1));
+        newGameButton.setForeground(Color.WHITE);
+
+        newButtonPanel.add(newGameButton);
+        mainPanel.add(newButtonPanel);
+
 
 
         mainPanel.add(Box.createRigidArea(new Dimension(0, 10)));
