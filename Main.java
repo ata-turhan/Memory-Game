@@ -69,6 +69,18 @@ public class Main {
         newButtonPanel.add(newGameButton);
         mainPanel.add(newButtonPanel);
 
+        JPanel turnsPanel = new JPanel();
+        turnsPanel.setLayout (new FlowLayout(FlowLayout.CENTER));
+        turnsPanel.setPreferredSize(new Dimension(turnsPanel.getPreferredSize().width, -110));
+        turnsPanel.setBackground(Color.BLACK);
+
+        JLabel turnsLabel = new JLabel("Turns: " + String.valueOf(game.getTurns()) + "/15");
+        turnsLabel.setForeground(Color.decode("#fc9200"));
+        turnsLabel.setFont(new Font("Arial", Font.PLAIN, 30));
+
+        turnsPanel.add(turnsLabel);
+        mainPanel.add(turnsPanel);
+
 
 
         mainPanel.add(Box.createRigidArea(new Dimension(0, 10)));
