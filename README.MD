@@ -2,7 +2,7 @@
 
 This project is a memory game implemented in Java using Swing and AWT components. It challenges players to test their memory and recall abilities by matching pairs of cards.
 
-![Game Screenshot](screenshot.png)
+![Memory Game Screenshot](screenshot.png)
 
 ## Features
 
