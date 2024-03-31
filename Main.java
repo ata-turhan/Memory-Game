@@ -81,6 +81,20 @@ public class Main {
         turnsPanel.add(turnsLabel);
         mainPanel.add(turnsPanel);
 
+        JPanel gridPanel = new JPanel();
+        gridPanel.setLayout (new GridLayout(3, 4, 2, 2));
+        gridPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 0, 10));
+        gridPanel.setPreferredSize(new Dimension(gridPanel.getPreferredSize().width, 280));
+        gridPanel.setBackground(Color.BLACK);
+
+        for (int i = 0; i < 12; i++) {
+            JLabel label = new JLabel(game.getCustomIcon(i).getDefaultIconImage());
+            label.putClientProperty("customIcon", game.getCustomIcon(i));
+            gridPanel.add(label);
+        }
+
+        mainPanel.add(gridPanel);
+
 
 
         mainPanel.add(Box.createRigidArea(new Dimension(0, 10)));
